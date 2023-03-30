@@ -1,0 +1,32 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  nav {
+    height: 50px;
+    background-color: black;
+
+    ul {
+      @include flexBox;
+      height: 50px;
+      justify-content: space-evenly;
+      li {
+        transition: 1s;
+        &:hover {
+          transform: scale(1.2);
+        }
+        a {
+          color: white;
+          padding: 7px 10px;
+          border: 1px solid transparent;
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.582);
+            border-radius: 7px;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}

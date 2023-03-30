@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+}
+header nav {
+  height: 50px;
+  background-color: black;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  justify-content: space-evenly;
+}
+header nav ul li {
+  transition: 1s;
+}
+header nav ul li:hover {
+  transform: scale(1.2);
+}
+header nav ul li a {
+  color: white;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+}
+header nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.582);
+  border-radius: 7px;
+  color: black;
+}
+
+#sec1 {
+  height: 700px;
+  margin-top: 70px;
+  border: 2px solid black;
+}
+#sec1 .cards {
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+#sec1 .cards .card1:hover {
+  background-image: url(../img/img1.jpg);
+}
+#sec1 .cards .card2:hover {
+  background-image: url(../img/img2.jpg);
+  background-size: cover;
+}
+#sec1 .cards .card3:hover {
+  background-image: url(../img/img3.jpg);
+  background-size: cover;
+}
+#sec1 .cards .card {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(117, 117, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  border: 3px dotted black;
+  transition: 2s;
+}
+#sec1 .cards .card:hover {
+  transform: rotateX(360deg);
+}
+#sec1 .cards .card h1:hover {
+  display: none;
+}
+
+#sec2 .boxes {
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-top: 150px;
+}
+#sec2 .boxes .box ul {
+  margin: 10px 0;
+}
+#sec2 .boxes .box li {
+  margin: 5px 0;
+}
+#sec2 .boxes .box li a {
+  color: grey;
+}
+#sec2 .boxes .box li a:hover {
+  background-color: rgba(0, 0, 0, 0.11);
+  border-radius: 5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}/*# sourceMappingURL=style.css.map */

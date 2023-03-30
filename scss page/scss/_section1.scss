@@ -1,0 +1,45 @@
+#sec1 {
+  height: 700px;
+  margin-top: 70px;
+  border: 2px solid black;
+  .cards {
+    height: 700px;
+    @include flexBox;
+    justify-content: center;
+    column-gap: 50px;
+    .card1 {
+      &:hover {
+        background-image: url(../img/img1.jpg);
+      }
+    }
+    .card2 {
+      &:hover {
+        background-image: url(../img/img2.jpg);
+        background-size: cover;
+      }
+    }
+    .card3 {
+      &:hover {
+        background-image: url(../img/img3.jpg);
+        background-size: cover;
+      }
+    }
+    .card {
+      height: 200px;
+      width: 200px;
+      background-color: rgb(117, 117, 1);
+      @include flexBox;
+      justify-content: center;
+      border: 3px dotted black;
+      transition: 2s;
+      &:hover {
+        transform: rotateX(360deg);
+      }
+      h1 {
+        &:hover {
+          display: none;
+        }
+      }
+    }
+  }
+}
