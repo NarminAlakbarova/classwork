@@ -25,9 +25,9 @@ const arr2=['user1','user2','user3',11,3,5]
 //  newArr=arr2.slice(0)
 // console.log(newArr);
 //2
-// newArr=arr2.slice(0,4)
+// newArr=arr2.slice(1,5)
 // console.log(newArr);
-//3
+// //3
 // newArr=arr2.slice(2)
 // console.log(newArr);
 
@@ -84,16 +84,14 @@ const arr5=[4,5,6,'2',6,true,undefined,'55']
 //4
 // const mixArray=['1',2,4,'a',false,'9',12,'42',undefined,3,true,null]
 // let newArry=mixArray.filter((elem)=>!elem)
-
+// console.log(newArry);
 // console.log(newArry);
 
 ////////7
-const arr7=[44,3,6,'2',6,true,undefined,'55',null]
-let newarry=arr7
-.filter((elem)=>!elem)
-.map((elem)=>{ Number(elem)
-    return Math.max(elem)} )
-console.log(newarry);
+// const arr7=[44,3,6,'2',6,true,undefined,'55',null]
+// let newArr1=arr7.filter((item)=>Number(item))
+// let newArr2=Math.max(...newArr1.map((item)=>Number(item)))
+// console.log(newArr2);
 
 
 
