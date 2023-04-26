@@ -1,5 +1,9 @@
-# Deployed Task
-## SCSS page task: https://bucolic-cobbler-e728a7.netlify.app/
+|  #  | TASKS                                 | Live Demo                                                                         |
+| :-: | ------------------------------------- | --------------------------------------------------------------------------------- |
+| 01  |       SCSS page task:                 |    https://bucolic-cobbler-e728a7.netlify.app/                                    |
+| 02  | 4.26DOM-BOM-form                      | https://poetic-muffin-ae502d.netlify.app/                                         |
+
+
 
 
 ## SCSS page task:
