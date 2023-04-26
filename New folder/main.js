@@ -1,6 +1,16 @@
-function calculateN(number){
- console.log(Math.trunc(number/100));
-console.log(Math.trunc((number%100)/10));
-console.log(Math.trunc((number%10)));
+function myfunc(str) {
+  let count = 0;
+  let letter = [];
+let obj={}
+  str
+    .toLowerCase()
+    .split("")
+    .map((item) => {
+      count = str.toLowerCase().split(item).length - 1;
+      letter.push([item, count]);
+    });
+  return Object.fromEntries(letter);
+
 }
-calculateN(325)
+console.log(myfunc("hello world"));
+console.log(myfunc("Nermin"));
