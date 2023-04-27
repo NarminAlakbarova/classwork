@@ -1,8 +1,8 @@
 |  #  | TASKS                                 | Live Demo                                                                         |
 | :-: | ------------------------------------- | --------------------------------------------------------------------------------- |
-| 01  |       SCSS page task:                 |    https://bucolic-cobbler-e728a7.netlify.app/                                    |
+| 01  | SCSS page task:                       |    https://bucolic-cobbler-e728a7.netlify.app/                                    |
 | 02  | 4.26DOM-BOM-form                      | https://poetic-muffin-ae502d.netlify.app/                                         |
-
+| 03  |04.27Events task:                      | https://teal-bavarois-57942d.netlify.app/                                         |
 
 
 
