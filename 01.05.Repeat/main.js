@@ -101,20 +101,20 @@ const arr = ["6", 8, NaN, "0", 5, 4, "true", false, 7, "a", undefined, 8, true];
 // console.log(sortArr(arrNum));
 
 ////////////////task8
-const arrLetters=['g','d','a','c','j','b','e']
-function sortArr(newArr) {
-  for (i = 0; i < newArr.length; i++) {
-    if (newArr[i] > newArr[i + 1]) {
-      let num = newArr[i];
-      newArr[i] = newArr[i + 1];
-      newArr[i + 1] = num;
+// const arrLetters=['g','d','a','c','j','b','e']
+// function sortArr(newArr) {
+//   for (i = 0; i < newArr.length; i++) {
+//     if (newArr[i] > newArr[i + 1]) {
+//       let num = newArr[i];
+//       newArr[i] = newArr[i + 1];
+//       newArr[i + 1] = num;
       
-      i = -1;
-    }
-  }
-  return newArr;
-}
-console.log(sortArr(arrLetters));
+//       i = -1;
+//     }
+//   }
+//   return newArr;
+// }
+// console.log(sortArr(arrLetters));
 
 //////////////////task 9
 // const arr9=[[1,2],[3,4,5],[6,7,8,9]]
@@ -143,3 +143,16 @@ console.log(sortArr(arrLetters));
 // console.log(calc(2, "+", 2));
  
 // console.log(calc(2, "+", 2));
+
+
+
+function clear(str){
+  if(str.toLowerCase().split("").every((item)=>item!="f"&&item!="o"&&item!="g")){
+  return "it is clear"
+  }
+  else{
+  return str.toLowerCase().split("").filter((item)=>item!="f"&&item!="g"&&item!="o").join("")
+  }
+  }
+   console.log(clear("fogfogFFfoooofftogffreogffesGgfOogfog")) 
+   console.log(clear("nermin"))

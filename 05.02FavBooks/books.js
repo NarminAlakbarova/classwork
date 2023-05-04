@@ -92,6 +92,7 @@ const books = [
 
 let row = document.querySelector(".row");
 let allBooks = JSON.parse(localStorage.getItem("favBooks")) ?? [];
+let basketBooks = JSON.parse(localStorage.getItem("basket")) ?? [];
 books.forEach((item) => {
   row.innerHTML += `
     <div class="col-3 my-4">
@@ -103,6 +104,7 @@ books.forEach((item) => {
         </p>
          <i><p>Year: ${item.year}</p></i>
         <button class="btn btn-primary" id=${item.id}>Add to Favorite</button>
+        <button class="btn btn-dark" id=${item.id}>Add too basket</button>
       </div>
     </div>
   </div>
@@ -122,5 +124,13 @@ allBtn.forEach((item) => {
     } else {
       alert("You have already added this book!!");
     }
+  });
+});
+allBasketBtn = document.querySelectorAll(".btn-dark");
+allBasketBtn.forEach((item) => {
+  item.addEventListener("click", function () {
+    let basket = books.find((obj) => obj.id == item.id);
+    basketBooks.push(basket);
+    localStorage.setItem("basket", JSON.stringify(basketBooks));
   });
 });
