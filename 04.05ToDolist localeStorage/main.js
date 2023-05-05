@@ -63,13 +63,14 @@ function remove(id) {
 function edit(id) {
   let edit = todos.find((obj) => obj.id == id);
   input.value = edit.todoText;
-  // addBtn.innerText = "Edit";
+  addBtn.innerText = "Edit";
   addBtn.onclick = function () {
     let finish = todos.find((obj) => obj.id == id);
     finish.todoText = input.value;
-   
     localStorage.setItem("todoList", JSON.stringify(todos));
     create();
+    addBtn.innerText="Add"
+    input.value=""
   };
 
 }
