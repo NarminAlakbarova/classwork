@@ -40,7 +40,7 @@ function create() {
  
   });
 }
-addBtn.addEventListener("click", function () {
+addBtn.onclick=function() {
   let obj = {
     id: Date.now(),
     todoText: input.value,
@@ -50,12 +50,8 @@ addBtn.addEventListener("click", function () {
   localStorage.setItem("todoList", JSON.stringify(todos));
   create();
   input.value = "";
-});
-window.addEventListener("keyup", function (event) {
-  if (event.code === "Enter") {
-    input.value && create();
-  }
-});
+};
+
 
 function remove(id) {
   todos = todos.filter((obj) => obj.id != id);
@@ -68,7 +64,7 @@ function edit(id) {
   let edit = todos.find((obj) => obj.id == id);
   input.value = edit.todoText;
   // addBtn.innerText = "Edit";
-  addBtn.onclick = function (id) {
+  addBtn.onclick = function () {
     let finish = todos.find((obj) => obj.id == id);
     finish.todoText = input.value;
    
@@ -77,6 +73,7 @@ function edit(id) {
   };
 
 }
+
 listGroup.addEventListener("click", function (e) {
   if (e.target.tagName === "INPUT" && e.target.type === "checkbox") {
     let parentLi = e.target.closest("li");
