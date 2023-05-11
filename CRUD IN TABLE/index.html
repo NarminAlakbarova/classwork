@@ -28,10 +28,10 @@
         /* width: 500px; */
         /* justify-content: start; */
       }
-      .fa-arrow-up{
+      .fa-arrow-up {
         display: none;
       }
-      .fa-arrow-down{
+      .fa-arrow-down {
         display: none;
       }
     </style>
@@ -74,8 +74,22 @@
               <input
                 type="email"
                 class="form-control"
-                id="lastname"
+                id="email"
                 style="width: 500px"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Card Number</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="pass"
+                style="width: 500px"
+                placeholder="XXXX-XXXX-XXXX-XXXX"
+                minlength="8"
+                maxlength="20"
               />
             </div>
             <button type="submit" class="btn btn-success" id="submitbtn">
@@ -99,9 +113,11 @@
           <tr>
             <th onclick="sort()">
               <i class="fa-solid fa-arrow-up text-danger"></i>
-              <i class="fa-solid fa-arrow-down text-success"></i>First Name</th>
+              <i class="fa-solid fa-arrow-down text-success"></i>First Name
+            </th>
             <th>Last Name</th>
             <th>Email</th>
+            <th>Card Number</th>
             <th>Action</th>
           </tr>
         </thead>

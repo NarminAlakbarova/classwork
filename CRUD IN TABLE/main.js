@@ -12,6 +12,7 @@ let arr = [];
 let copyData = [];
 let editId = null;
 let editStatus = false;
+let datevalue = new Date();
 
 function drawTable(array) {
   tbody.innerHTML = "";
@@ -21,9 +22,17 @@ function drawTable(array) {
                 <td>${item.firstname}</td>
                 <td>${item.lastname}</td>
                 <td>${item.email}</td>
+                <td>${item.number.split("").fill("*",0,-4).join("")}</td>
                 <td>
-                  <a class="btn btn-warning" onclick=editUSer("${item.id}")>Edit</a>
-                  <a class="btn btn-danger" onclick=deleteBtn("${item.id}")>Delete</a>
+                  <a class="btn btn-warning" onclick=editUSer("${
+                    item.id
+                  }")>Edit</a>
+                  <a class="btn btn-danger" onclick=deleteBtn("${
+                    item.id
+                  }")>Delete</a>
+                  <a class="btn btn-primary" onclick=detailsBtn("${
+                    item.firstname
+                  }","${item.date}")>details</a>
                 </td>
               </tr>
             
@@ -39,7 +48,7 @@ async function createTable() {
   drawTable(arr);
 }
 createTable();
-// drawTable();
+// drawTable(arr);
 
 let ale = document.querySelector("#alertdiv");
 function alertDiv(content, color) {
@@ -54,36 +63,33 @@ function alertDiv(content, color) {
 }
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
+  let obj = {
+    firstname: inputs[0].value,
+    lastname: inputs[1].value,
+    email: inputs[2].value,
+    date: datevalue.toLocaleDateString(),
+    number: inputs[3].value,
+  };
   if (
     inputs[0].value === "" ||
     inputs[1].value === "" ||
-    inputs[2].value === ""
+    inputs[2].value === "" ||
+    inputs[3].value === ""
   ) {
     alertDiv("Please fill in all the fields!", "alert-warning");
 
     // return;
   } else {
     if (!editStatus) {
-      let obj = {
-        firstname: inputs[0].value,
-        lastname: inputs[1].value,
-        email: inputs[2].value,
-      };
       await axios.post(MOCK_URL, obj);
       alertDiv("Success!", "alert-success");
     } else {
-      let obj = {
-        firstname: inputs[0].value,
-        lastname: inputs[1].value,
-        email: inputs[2].value,
-      };
       await axios.patch(`${MOCK_URL}/${editId}`, obj);
       editStatus = false;
       alertDiv("It was successfully edit!", "alert-info");
     }
   }
 });
-
 async function editUSer(id) {
   editStatus = true;
   editId = id;
@@ -92,6 +98,7 @@ async function editUSer(id) {
     inputs[0].value = item.firstname;
     inputs[1].value = item.lastname;
     inputs[2].value = item.email;
+    inputs[3].value = item.number;
   });
   submitbtn.innerHTML = "EDIT";
 }
@@ -101,13 +108,13 @@ async function deleteBtn(id) {
   alertDiv("information deleted", "alert-danger");
 }
 
-inputs[3].addEventListener("input", function (e) {
+inputs[4].addEventListener("input", function (e) {
   copyData = arr;
-  copyData = copyData.filter((item) => {
-    return `${item.firstname} ${item.lastname}`
+  copyData = copyData.filter((item) =>
+    item.firstname
       .toLocaleLowerCase()
-      .includes(e.target.value.toLocaleLowerCase());
-  });
+      .includes(e.target.value.toLocaleLowerCase())
+  );
   drawTable(copyData);
 });
 let sorting = true;
@@ -125,4 +132,8 @@ async function sort() {
     down.style.display = "inline";
     drawTable(copyData);
   }
+}
+
+function detailsBtn(username, userDate) {
+  alertDiv(`${username} has been created on ${userDate}`, "alert-primary");
 }
