@@ -4,6 +4,8 @@ let submitbtn = document.querySelector("#submitbtn");
 let form = document.querySelector("form");
 let nameValue = document.querySelector("#nameValue");
 let body = document.querySelector("body");
+let up = document.querySelector(".fa-arrow-up");
+let down = document.querySelector(".fa-arrow-down");
 // let search = document.querySelector("#search");
 let inputs = document.querySelectorAll("input");
 let arr = [];
@@ -11,13 +13,9 @@ let copyData = [];
 let editId = null;
 let editStatus = false;
 
-async function drawTable() {
-  let response = await axios(MOCK_URL);
-  let data = await response.data;
-  arr = data;
-  copyData = inputs[3].value ? copyData : data;
+function drawTable(array) {
   tbody.innerHTML = "";
-  copyData.forEach((item) => {
+  array.forEach((item) => {
     tbody.innerHTML += `
     <tr>
                 <td>${item.firstname}</td>
@@ -33,25 +31,37 @@ async function drawTable() {
     `;
   });
 }
-drawTable();
+async function createTable() {
+  let response = await axios(MOCK_URL);
+  let data = await response.data;
+  arr = data;
+  copyData = inputs[3].value ? copyData : data;
+  drawTable(arr);
+}
+createTable();
+// drawTable();
 
 let ale = document.querySelector("#alertdiv");
+function alertDiv(content, color) {
+  let alert = document.createElement("div");
+  alert.classList.add("alert", `${color}`);
+  alert.innerText = `${content}`;
+  ale.append(alert);
+
+  setTimeout(function () {
+    alert.remove();
+  }, 2000);
+}
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
-  if (inputs[0].value == "" && inputs[1].value == "" && inputs[2].value == "") {
+  if (
+    inputs[0].value === "" ||
+    inputs[1].value === "" ||
+    inputs[2].value === ""
+  ) {
+    alertDiv("Please fill in all the fields!", "alert-warning");
 
- 
-    let alert = document.createElement("div");
-    alert.classList.add("alert", "alert-danger");
-    
-    alert.innerText = "Please fill in all fields";
-    ale.append(alert)
-
-    setTimeout(function () {
-      alert.remove();
-    }, 1000);
-    
-    return;
+    // return;
   } else {
     if (!editStatus) {
       let obj = {
@@ -60,15 +70,7 @@ form.addEventListener("submit", async function (e) {
         email: inputs[2].value,
       };
       await axios.post(MOCK_URL, obj);
-      let alert = document.createElement("div");
-      alert.classList.add("alert", "alert-success");
-      
-      alert.innerText = "success";
-      ale.append(alert)
-  
-      setTimeout(function () {
-        alert.remove();
-      }, 1000);
+      alertDiv("Success!", "alert-success");
     } else {
       let obj = {
         firstname: inputs[0].value,
@@ -77,6 +79,7 @@ form.addEventListener("submit", async function (e) {
       };
       await axios.patch(`${MOCK_URL}/${editId}`, obj);
       editStatus = false;
+      alertDiv("It was successfully edit!", "alert-info");
     }
   }
 });
@@ -95,6 +98,7 @@ async function editUSer(id) {
 
 async function deleteBtn(id) {
   await axios.delete(`${MOCK_URL}/${id}`);
+  alertDiv("information deleted", "alert-danger");
 }
 
 inputs[3].addEventListener("input", function (e) {
@@ -104,20 +108,21 @@ inputs[3].addEventListener("input", function (e) {
       .toLocaleLowerCase()
       .includes(e.target.value.toLocaleLowerCase());
   });
-  drawTable();
+  drawTable(copyData);
 });
-let sorting = false;
-function sort() {
+let sorting = true;
+async function sort() {
   sorting = !sorting;
-
   if (!sorting) {
-    arr.sort((a, b) => a.firstname.localeCompare(b.firstname));
+    copyData.sort((a, b) => a.firstname.localeCompare(b.firstname));
+    up.style.display = "inline";
+    down.style.display = "none";
 
-    drawTable(arr);
+    drawTable(copyData);
   } else {
-    arr.sort((a, b) => b.firstname.localeCompare(a.firstname));
-
-    drawTable(arr);
+    copyData.sort((a, b) => b.firstname.localeCompare(a.firstname));
+    up.style.display = "none";
+    down.style.display = "inline";
+    drawTable(copyData);
   }
-  // console.log(arr);
 }

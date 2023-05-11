@@ -10,6 +10,13 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Document</title>
     <style>
       body {
@@ -21,12 +28,18 @@
         /* width: 500px; */
         /* justify-content: start; */
       }
-      
+      .fa-arrow-up{
+        display: none;
+      }
+      .fa-arrow-down{
+        display: none;
+      }
     </style>
   </head>
   <body>
     <h1 class="text-center my-3" style="color: white">JS CRUD</h1>
     <div class="container">
+      <div id="alertdiv"></div>
       <div class="row">
         <div class="col-4"></div>
         <div class="col-4 my-4">
@@ -68,7 +81,6 @@
             <button type="submit" class="btn btn-success" id="submitbtn">
               Submit
             </button>
-        
           </form>
         </div>
         <div class="col-4"></div>
@@ -76,7 +88,6 @@
     </div>
 
     <div class="container">
-      <div id="alertdiv"></div>
       <input
         type="text"
         class="form-control"
@@ -86,7 +97,9 @@
       <table class="table table-dark table-striped my-5">
         <thead>
           <tr>
-            <th onclick="sort()">First Name</th>
+            <th onclick="sort()">
+              <i class="fa-solid fa-arrow-up text-danger"></i>
+              <i class="fa-solid fa-arrow-down text-success"></i>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
             <th>Action</th>
