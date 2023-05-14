@@ -40,6 +40,7 @@ function drawTable(array) {
     `;
   });
 }
+
 async function createTable() {
   let response = await axios(MOCK_URL);
   let data = await response.data;

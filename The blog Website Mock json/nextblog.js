@@ -11,17 +11,16 @@ selection.addEventListener("change", function (e) {
   author = e.target.value;
 });
 axios(`http://localhost:8080/blogs/${id}`).then((res) => {
-    input.value = res.data.title;
-    textArea.value = res.data.body;
-    selection.value=res.data.author
-  });
+  input.value = res.data.title;
+  textArea.value = res.data.body;
+  selection.value = res.data.author;
+});
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   if (id) {
     // heading.innerText = "EDIT BLOG";
     console.log(id);
 
-   
     let edit = {
       title: input.value,
       body: textArea.value,
