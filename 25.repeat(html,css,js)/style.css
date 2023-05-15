@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none !important;
+}
+
+header .header {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+header .header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15%;
+  background-color: #ffe4c4;
+}
+header .header nav ul {
+  display: flex;
+  -moz-column-gap: 70px;
+       column-gap: 70px;
+  align-items: center;
+  margin: auto 0;
+}
+header .header nav ul li a {
+  color: black;
+  padding: 10px 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+header .header nav ul li a:hover {
+  border-color: black;
+  color: rgb(167, 27, 27);
+}
+header .header nav .fa-bars {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  header .header nav ul {
+    display: none;
+  }
+  header .header nav .fa-bars {
+    display: block;
+  }
+}
+
+#bgsec {
+  background-image: url(./img/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+@media only screen and (max-width: 768px) {
+  #bgsec {
+    background-image: url(./img/bg3.jpg);
+  }
+}
+.heading-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.heading-div .users-heading::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+}
+
+.all-div table tbody tr .table-img {
+  width: 40px;
+  height: 45px;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 768px) {
+  .all-div table {
+    display: none;
+  }
+}
+.all-div .card {
+  padding: 10px 20px;
+  display: none;
+}
+.all-div .card .text {
+  margin-bottom: 20px;
+}
+.all-div .card .img-btn {
+  display: flex;
+  justify-content: space-between;
+}
+.all-div .card .img-btn .img-text {
+  display: flex;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.all-div .card .img-btn .img-text img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 768px) {
+  .all-div .card {
+    display: block;
+  }
+}
+@media only screen and (max-width: 568px) {
+  .all-div .card {
+    display: block;
+  }
+  .all-div .card .img-btn {
+    flex-direction: column;
+  }
+  .all-div .card .img-btn .btns {
+    margin-left: 72px;
+  }
+}/*# sourceMappingURL=style.css.map */
