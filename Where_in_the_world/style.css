@@ -9,6 +9,19 @@
        column-gap: 30px;
 }
 
+.allDetails .detailsimg {
+  height: 300px;
+  width: 400px;
+}
+
+.back {
+  color: black;
+  padding: 10px 25px;
+}
+.back .fa-arrow-left-long {
+  padding-right: 10px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -33,4 +46,17 @@ header .header nav button {
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+}
+
+.dark {
+  background-color: rgb(1, 2, 10);
+  color: white;
+}
+
+.dark-modebtn {
+  color: white;
+}
+
+#selection {
+  max-width: 250px;
 }/*# sourceMappingURL=style.css.map */
