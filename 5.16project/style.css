@@ -1,0 +1,36 @@
+.allborder {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.allborder .bordercountry {
+  display: flex;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none !important;
+}
+
+header .header nav {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto 0;
+}
+header .header nav button {
+  border: none;
+  background-color: transparent;
+}
+
+.loading {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}/*# sourceMappingURL=style.css.map */
