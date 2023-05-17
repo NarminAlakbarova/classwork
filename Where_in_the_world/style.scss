@@ -10,17 +10,27 @@
 }
 header{
     .header{
+        padding: 20px 0;
+    
         nav{
-            padding: 10px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin:  auto 0;
+            // margin:  auto 0;
             button{
                 border: none;
                 background-color: transparent;
             }
         }
+    
+    }
+    &::after{
+        content: "";
+        width: 100%;
+        background-color: black;
+        height: 1px;
+        display: block;
+        margin-bottom: 30px;
     }
 }
 
@@ -40,3 +50,7 @@ header{
 #selection{
     max-width: 250px;
 }
+// .dark-card{
+//     background-color: black;
+//     color: #ffffff;
+// }

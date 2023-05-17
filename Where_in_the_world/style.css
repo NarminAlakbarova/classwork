@@ -29,16 +29,25 @@
   text-decoration: none !important;
 }
 
+header .header {
+  padding: 20px 0;
+}
 header .header nav {
-  padding: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: auto 0;
 }
 header .header nav button {
   border: none;
   background-color: transparent;
+}
+header::after {
+  content: "";
+  width: 100%;
+  background-color: black;
+  height: 1px;
+  display: block;
+  margin-bottom: 30px;
 }
 
 .loading {

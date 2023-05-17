@@ -5,7 +5,7 @@ async function drawData(item) {
   row.innerHTML = "";
 
   row.innerHTML += `
-        <div class="col-6">
+        <div class="col-xl-6 col-sm-12">
         <img src="${item[0].flags?.png}" alt="" class="detailsimg"/>
       </div>
       <div class="col-6">

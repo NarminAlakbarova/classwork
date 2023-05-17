@@ -1,5 +1,5 @@
 let row = document.querySelector(".allcards");
-// let cards = document.querySelector(".darkcol");
+// let cards = document.querySelector(".card-body");
 let search = document.querySelector("#search");
 let loading = document.querySelector(".loading");
 let select = document.querySelector("#selection");
@@ -72,5 +72,5 @@ drawTable(filteredSelect)
 darkMode.addEventListener("click",function(){
   body.classList.toggle("dark")
   this.classList.toggle("dark-modebtn")
-  // cards.classList.toggle("dark")
+  // cards.classList.toggle("dark-card")
 })
