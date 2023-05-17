@@ -25,24 +25,44 @@
         h2{
             text-align: center;
 
+
         }
+        h2::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: blue;
+            margin-top: 10px;
+        }
+        .heading{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .favimg{
+            width: 100%;
+            height: 200px;
+        }
+       .img-titlediv{
+        padding: 0 10px;
+      
+       }
+       .title{
+        padding-top: 10px;
+        font-size: 18px;
+        color: brown;
+        font-weight: 500;
+       }
+    
     </style>
 </head>
 <body>
     <a href="./index.html" class="btn btn-primary">Go Back</a>
-<h2>Favorite Characters</h2>
+<div class="heading"><h2>Favorite Characters</h2></div>
 <div class="container">
-    <div class="row">
-        <div class="col-3 ">
-            <div class="card">
-                <img src="" alt="">
-                <h2>dced</h2>
-                <hr>
-                <p>dswd</p>
-                <p>ded</p>
-                <button>Remove Fav</button>
-            </div>
-        </div>
+    <div class="cards d-flex justify-content-center gap-4 flex-wrap my-5">
+        
     
     </div>
 </div>

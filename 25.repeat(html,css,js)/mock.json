@@ -1,60 +1,52 @@
 {
   "users": [
     {
-      "name": "Lars",
-      "surname": "Gregory",
-      "email": "xakusodi@mailinator.com",
-      "date": "5/16/2023, 6:37:34 PM",
-      "userphoto": "./img/bg3.jpg",
-      "id": 14
+      "name": "Alfredo",
+      "surname": "Linguini",
+      "email": "Alfredo@gmail.com",
+      "date": "5/17/2023, 10:16:52 AM",
+      "userphoto": "./img/Alfredo.jpg",
+      "id": 1
     },
     {
-      "name": "Idona",
-      "surname": "Montgomery",
-      "email": "wohulut@mailinator.com",
-      "date": "5/16/2023, 6:53:08 PM",
+      "name": "Chef",
+      "surname": "Skinner",
+      "email": "Chef@gmail.com",
+      "date": "5/17/2023, 10:17:45 AM",
+      "userphoto": "./img/Chef.jpeg",
+      "id": 2
+    },
+    {
+      "name": "Gusteau",
+      "surname": "Auguste",
+      "email": "gusteau@gmail.com",
+      "date": "5/17/2023, 10:18:12 AM",
+      "userphoto": "./img/Qusto.jpg",
+      "id": 3
+    },
+    {
+      "name": "Remy",
+      "surname": "mouse",
+      "email": "remy@gmail.com",
+      "date": "5/17/2023, 10:21:36 AM",
+      "userphoto": "./img/remy2.jpg",
+      "id": 4
+    },
+    {
+      "name": "Collete",
+      "surname": "Tatou",
+      "email": "collete@gmail.com",
+      "date": "5/17/2023, 10:19:21 AM",
+      "userphoto": "./img/Collete.jpg",
+      "id": 5
+    },
+    {
+      "name": "ego2",
+      "surname": "Anton",
+      "email": "ego2@gmail.com",
+      "date": "5/17/2023, 10:35:36 AM",
       "userphoto": "./img/Iqo.jpg",
-      "id": 16
-    },
-    {
-      "name": "Jane",
-      "surname": "Buck",
-      "email": "nepeboziju@mailinator.com",
-      "date": "5/16/2023, 6:49:42 PM",
-      "userphoto": "./img/undefined",
-      "id": 17
-    },
-    {
-      "name": "Meghan",
-      "surname": "Klein",
-      "email": "nurilyge@mailinator.com",
-      "date": "5/16/2023, 6:49:51 PM",
-      "userphoto": "./img/undefined",
-      "id": 18
-    },
-    {
-      "name": "Emery",
-      "surname": "Randall",
-      "email": "wygotuzuqa@mailinator.com",
-      "date": "5/16/2023, 6:50:07 PM",
-      "userphoto": "./img/undefined",
-      "id": 19
-    },
-    {
-      "name": "Boris",
-      "surname": "Santana",
-      "email": "xyqu@mailinator.com",
-      "date": "5/16/2023, 6:51:26 PM",
-      "userphoto": "./img/undefined",
-      "id": 20
-    },
-    {
-      "name": "Ralph",
-      "surname": "Baker",
-      "email": "tumydu@mailinator.com",
-      "date": "5/16/2023, 6:53:00 PM",
-      "userphoto": "./img/Iqo.jpg",
-      "id": 21
+      "id": 6
     }
   ]
 }
